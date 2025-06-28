@@ -67,6 +67,51 @@ package main
 //
 //  }
 
+//  8
+//  func Fibonacci(n int) int {
+//	  prevNum, fibonacciNum := 0, 0
+//
+//	  for i := 0; i <= n; i++ {
+//
+//	  	  if i == 1 {
+//			  fibonacciNum = 1
+//		  } else {
+//			  currentFibonacci := fibonacciNum
+//			  fibonacciNum = fibonacciNum + prevNum
+//			  prevNum = currentFibonacci
+//		  }
+//	  }
+//	  return fibonacciNum
+//  }
+
+//  9
+//  func FindMin(nums []int) (min int) {
+//
+//	  min = nums[0]
+//
+//	  for i := 0; i < len(nums); i++ {
+//	  	  if nums[i] < min {
+//		  	  min = nums[i]
+//		  }
+//	  }
+//
+//	  return min
+//  }
+
+// 10
+//  func IsPalindrome(s string) bool {
+//	  counterBack := 1
+//
+//	  for i := 0; i < len(s)/2; i++ {
+//	  	  if s[i] != s[len(s)-counterBack] {
+//			  return false
+//		  }
+//		  counterBack++
+//	  }
+//
+//	  return true
+//  }
+
 func main() {
 
 }
