@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 )
 
 // 	1
@@ -23,8 +25,6 @@ import (
 //	fmt.Println(string(file_data))
 
 //  3
-
-//
 //
 //	jsonSlice, e := json.Marshal(personSlice)
 //
@@ -38,6 +38,16 @@ import (
 //		fmt.Println("error:", e)
 //	}
 
+//  4
+//	dataFromFile, err := os.ReadFile("people.json")
+//
+//	if err != nil {
+//		fmt.Println(err)
+//	}
+//	personSlice := []Person{}
+//	json.Unmarshal(dataFromFile, &personSlice)
+//	fmt.Println(personSlice)
+
 type Person struct {
 	Name string
 	Age  int
@@ -45,12 +55,24 @@ type Person struct {
 
 func main() {
 
-	dataFromFile, err := os.ReadFile("people.json")
+	personFromFile, err := os.ReadFile("people.json")
 
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	fmt.Println(dataFromFile)
+	parsedPersons := []Person{}
+
+	err = json.Unmarshal(personFromFile, &parsedPersons)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for key, _ := range parsedPersons {
+		parsedPersons[key].Age++
+	}
+
+	err = os.WriteFile("people.json", string(parsedPersons), 0644)
 
 }
