@@ -23,12 +23,12 @@ func (c Circle) Area() float64 {
 
 func (c Rectangle) Area() float64 {
 	return c.Width * c.Length
-
 }
 
-func main() {
+func first() {
 	var c, r Shape = Circle{Radius: 4}, Rectangle{Length: 4, Width: 4}
 
 	fmt.Printf("Circle area: %f", c.Area())
 	fmt.Printf("\nRectangle area: %f", r.Area())
+
 }

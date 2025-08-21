@@ -1,5 +1,7 @@
 package main
 
+import "FirstProject/FourtModule"
+
 //  1
 //  func IsEven(n int) bool {
 //	  return n%2 == 0
@@ -113,5 +115,5 @@ package main
 //  }
 
 func main() {
-
+	FourtModule.Second()
 }
